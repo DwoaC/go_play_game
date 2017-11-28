@@ -85,6 +85,16 @@ Incorrect moves raise an exception
       ...
     go.core.GoException: Piece already present at Cell(6, 6, 1)
 
+A utility function to parse a board from a string or list is available,
+
+    >>> parse_board(
+    >>>    '    \n'
+    >>>    ' BW \n'
+    >>>    ' W  \n'
+    >>>    '    ')
+    <go.core.Go at 0x106c86e10>
+
+
 '''
 
 # TODO: stop game if players in a loop
@@ -106,6 +116,9 @@ board_to_state_mapping = {
 }
 
 def parse_board(board):
+    if isinstance(board, str):
+        board = board.split('\n')
+
     size = len(board)
     go = Go(size)
     for board_row, go_row in zip(board, go):
