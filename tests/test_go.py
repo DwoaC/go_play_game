@@ -72,7 +72,7 @@ class TestGo(unittest.TestCase):
     def test_patch_small_patch_all_white(self):
         go = self.small_board_all_white
         self.assertListEqual(
-            sorted(go[2][2].patch.cells, key=lambda c: c.cell_state),
+            sorted(go[2][2].patch.cells, key=lambda c: c._cell_state),
             [go[1][2], go[2][1], go[2][2], go[2][3], go[3][2]]
         )
 
