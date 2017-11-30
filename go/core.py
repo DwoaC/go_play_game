@@ -97,8 +97,13 @@ A utility function to parse a board from a string or list is available,
 
 '''
 
+# TODO: Winner detection
+# TODO: Impossible to win detection
+# TODO: Scoring
 # TODO: stop game if players in a loop
-# TODO: implment players
+# TODO: implement computer players.
+# TODO: implment player strategies with Random, CaptureLargestPatch etc.
+# TODO: optimize patches (no point if putting a REST API around Go)
 
 WHITE = 1
 BLACK = 0
@@ -140,7 +145,8 @@ def parse_board(board):
     There is massive room for optimisation.  The various
     views of the cells could be cached.  The patches
     could be cached and cells could be added to a patch
-    as part of the players move.
+    as part of the players move.  There's no point implementing
+    caching if the game is to be played on a REST website.
 
     :param board: (str or list(str) board state
     :return: (Go)
