@@ -342,7 +342,12 @@ class Cell:
 
     @property
     def _cell_state(self):
-        '''Convience property of the internal state.'''
+        '''Convience property of the internal state.
+
+        See memento pattern from Gang Of Four.
+
+        This makes operations like sorting easier to implement.
+        '''
 
         return (self.x, self.y, self.state)
 
